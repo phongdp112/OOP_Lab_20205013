@@ -3,19 +3,17 @@ import hust.soict.hedspi.aims.media.*;
 import java.util.ArrayList;
 
 public class Store {
-    private ArrayList<Media> itemsInStore;  // Thay mảng thành ArrayList
+    private ArrayList<Media> itemsInStore;
     private int qtyInStore;
 
-    // Constructor khởi tạo với kích thước tối đa của cửa hàng
     public Store(int maxSize) {
         itemsInStore = new ArrayList<>(maxSize);
         qtyInStore = 0;
     }
 
-    // Phương thức thêm Media vào cửa hàng
     public void addMedia(Media media) {
         if (qtyInStore < itemsInStore.size()) {
-            itemsInStore.add(media);  // Thêm media vào cửa hàng
+            itemsInStore.add(media);
             qtyInStore++;
             System.out.println(media.getTitle() + " added to the store.");
         } else {
@@ -23,16 +21,28 @@ public class Store {
         }
     }
 
-    // Phương thức xóa Media khỏi cửa hàng
     public void removeMedia(Media media) {
         for (int i = 0; i < qtyInStore; i++) {
-            if (itemsInStore.get(i).equals(media)) {  // Tìm media trong cửa hàng
-                itemsInStore.remove(i);  // Xóa media khỏi cửa hàng
+            if (itemsInStore.get(i).equals(media)) {
+                itemsInStore.remove(i);
                 qtyInStore--;
                 System.out.println(media.getTitle() + " removed from the store.");
                 return;
             }
         }
         System.out.println("Media not found in the store.");
+    }
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
+    public Media getMediaByTitle(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                return media;
+            }
+        }
+        return null;
     }
 }

@@ -19,6 +19,13 @@ public abstract class Media {
 		this.category = category;
 		this.cost = cost;
 	}
+    
+
+	public Media(String title, float cost) {
+		super();
+		this.title = title;
+		this.cost = cost;
+	}
 
 	public Media(int id, String title) {
  		super();
@@ -76,5 +83,15 @@ public abstract class Media {
 
     public void setCost(float cost) {
         this.cost = cost;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        // Kiểm tra nếu đối tượng truyền vào là null hoặc không phải là đối tượng của lớp Media
+        if (this == o) return true;  // Nếu là cùng đối tượng thì trả về true
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Media media = (Media) o;  // Ép kiểu Object sang Media
+        return title != null ? title.equals(media.title) : media.title == null;  // So sánh title
     }
 }

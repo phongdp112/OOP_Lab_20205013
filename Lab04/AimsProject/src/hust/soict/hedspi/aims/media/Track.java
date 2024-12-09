@@ -19,13 +19,16 @@ public class Track implements Playable {
         return length;
     }
 
+
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Track) {
-            Track other = (Track) obj;
-            return this.title.equalsIgnoreCase(other.title) && this.length == other.length;
-        }
-        return false;
+    public boolean equals(Object o) {
+        // Kiểm tra nếu đối tượng truyền vào là null hoặc không phải là đối tượng của lớp Track
+        if (this == o) return true;  // Nếu là cùng đối tượng thì trả về true
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Track track = (Track) o;  // Ép kiểu Object sang Track
+        if (length != track.length) return false;  // So sánh độ dài
+        return title != null ? title.equals(track.title) : track.title == null;  // So sánh title
     }
     @Override
     public void play() {
@@ -37,4 +40,5 @@ public class Track implements Playable {
     public String toString() {
         return "Track - " + title + " - " + length + " minutes";
     }
+    
 }
