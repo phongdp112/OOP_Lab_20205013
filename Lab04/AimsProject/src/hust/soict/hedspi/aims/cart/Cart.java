@@ -1,7 +1,5 @@
 // Cart.java
-package hust.soict.hedspi.aims.cart;
-import hust.soict.hedspi.aims.disc.*;
-import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+package src;
 public class Cart {
     private int qtyOrdered;
     private static final int MAX_NUMBERS_ORDERED = 20;

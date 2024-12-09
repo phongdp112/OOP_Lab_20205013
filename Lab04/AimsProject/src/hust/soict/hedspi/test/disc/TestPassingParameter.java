@@ -1,5 +1,5 @@
-package hust.soict.hedspi.test.disc;
-import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+package src;
+
 public class TestPassingParameter {
     public static class Wrapper<T> {
         public T value;

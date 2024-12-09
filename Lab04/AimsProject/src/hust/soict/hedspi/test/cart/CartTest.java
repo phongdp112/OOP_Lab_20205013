@@ -1,6 +1,5 @@
-package hust.soict.hedspi.test.cart;
-import hust.soict.hedspi.aims.media.DigitalVideoDisc;
-import hust.soict.hedspi.aims.cart.*;
+package src;
+
 public class CartTest {
     public static void main(String[] args) {
         // Tạo giỏ hàng mới
