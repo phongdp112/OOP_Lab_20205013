@@ -1,0 +1,16 @@
+2.
+You will create a new method that has the same name but with different type of parameter.
+  addDigitalVideoDisc(DigitalVideoDisc [] dvdList)
+  This method will add a list of DVDs to the current cart.
+  + Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+  
+Answer: Chọn phương thức với tham số số lượng tùy ý (Varargs) vì Varargs là một lựa chọn linh hoạt và dễ sử dụng hơn, đặc biệt khi số lượng tham số có thể thay đổi hoặc không xác định. 
+
+3.
+- Sau khi gọi swap(jungleDVD, cinderellaDVD):
+Tại sao tiêu đề của hai đối tượng này vẫn giữ nguyên?
+Trong phương thức swap(), các tham số o1 và o2 là các đối tượng tham chiếu, nhưng khi chúng được truyền vào phương thức, Java sao chép giá trị tham chiếu (not reference itself) của chúng vào các tham số. Điều này có nghĩa là việc thay đổi tham số o1 và o2 trong phương thức không ảnh hưởng đến các đối tượng gốc ngoài phương thức. Vì vậy, tiêu đề của các đối tượng jungleDVD và cinderellaDVD không thay đổi.
+- Sau khi gọi changeTitle(jungleDVD, cinderellaDVD.getTitle()):
+Tại sao tiêu đề của jungleDVD bị thay đổi?
+Phương thức changeTitle() thay đổi thuộc tính title của đối tượng DigitalVideoDisc mà nó nhận vào. Mặc dù tham số truyền vào là một bản sao của tham chiếu đối tượng, nhưng việc thay đổi thuộc tính của đối tượng đó trong phương thức sẽ ảnh hưởng trực tiếp đến đối tượng gốc ngoài phương thức. Do đó, tiêu đề của jungleDVD đã được thay đổi.
+- Java luôn là ngôn ngữ pass by value. Dù đối tượng là một tham chiếu, nhưng trong Java, tham chiếu đó cũng được sao chép và truyền vào phương thức (pass by value), không phải là tham chiếu trực tiếp (pass by reference).

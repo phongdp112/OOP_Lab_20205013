@@ -1,0 +1,8 @@
+1.
+Khi người dùng chọn "Cancel". biến option sẽ được gán giá trị JOptionPane.CANCEL_OPTION. 
+Chương trình chỉ có kiểm tra người dùng có chọn "Yes" không, còn các trường hợp khác đều
+mặc định giá trị bằng "No"
+Vì vậy người dùng chọn "Cancel" không khác gì chọn "No".
+2.
+Chuyển sang dùng showConfirmDialog để buộc người dùng chỉ chọn "Yes" hoặc "No"
+int option = JOptionPane.showConfirmDialog(null, "Yes", "No", JOptionPane.YES_NO_OPTION);
